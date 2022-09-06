@@ -5,7 +5,7 @@ public class Result<T>
     public T Data { get; }
     public ResultErrors Errors { get; }
 
-    public bool IsSuccess => Errors.Values.Count == 0;
+    public bool IsSuccess => Errors == null || Errors.Values.Count == 0;
 
     public Result(T data) => Data = data;
 
