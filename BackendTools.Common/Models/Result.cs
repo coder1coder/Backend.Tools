@@ -16,18 +16,7 @@ public sealed class Result<T>: Result
         Data = value;
     }
 
-    public static Result<T> Success(T value) => new(value);
-
-    public new static Result<T> NotFound(string errorMessage, string key = DefaultErrorKeys.NotFound) =>
-        (Result<T>)Result.NotFound(errorMessage, key);
-
-    public new static Result<T> Internal(string errorMessage, string key = DefaultErrorKeys.Internal) =>
-        (Result<T>)Result.Internal(errorMessage, key);
-
-    public new static Result<T> NotValid(Dictionary<string, string> errors = default) =>
-        (Result<T>)Result.NotValid(errors);
-    public new static Result<T> NotValid(string errorMessage, string key = DefaultErrorKeys.ValidationError) =>
-        (Result<T>)Result.NotValid(errorMessage, key);
+    public static Result<T> FromValue(T value) => new(value);
 }
 
 public class Result
@@ -45,11 +34,18 @@ public class Result
             };
     }
 
+    protected Result(ResultErrors errors)
+    {
+        Errors = errors;
+    }
+
     protected Result()
     {
     }
 
-    public static Result Success() => new();
+    public static Result Success => new();
+
+    public static Result FromErrors(ResultErrors errors) => new(errors);
 
     public static Result NotFound(string errorMessage, string key = DefaultErrorKeys.NotFound) =>
         new(OperationErrorType.NotFound, new Dictionary<string, string>
