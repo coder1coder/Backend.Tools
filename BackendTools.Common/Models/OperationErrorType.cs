@@ -6,6 +6,7 @@ public enum OperationErrorType
     Validation = 400,
     NotFound = 404,
     Forbidden = 403,
+    Internal = 500
 }
 
 public static class OperationErrorTypeExtensions
@@ -16,6 +17,8 @@ public static class OperationErrorTypeExtensions
             OperationErrorType.Validation => "Ошибка валидации",
             OperationErrorType.NotFound => "Ресурс не найден",
             OperationErrorType.Forbidden => "Нет доступа",
+            OperationErrorType.Internal => "Внутренняя ошибка",
+
             _ => "Не определено"
         };
 }

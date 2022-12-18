@@ -3,22 +3,20 @@
     <PropertyGroup>
 
         <PackageId>Backend.Tools.Common</PackageId>
-        <Version>1.0.1</Version>
+        <Version>1.0.6</Version>
         <Authors>coder</Authors>
         <Company>coder</Company>
-        
+
         <Title>Backend.Tools.Common</Title>
         <Description>Some classes and helpers to develop webapi</Description>
         <PackageProjectUrl>https://github.com/coder1coder/Backend.Tools</PackageProjectUrl>
-        
+
         <TargetFramework>netstandard2.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <LangVersion>latest</LangVersion>
 
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        
-        
-        
+
     </PropertyGroup>
 
     <ItemGroup>
