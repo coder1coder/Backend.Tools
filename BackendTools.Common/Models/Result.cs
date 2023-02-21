@@ -1,37 +1,5 @@
 ﻿namespace BackendTools.Common.Models;
 
-public static class DefaultErrorKeys
-{
-    public const string NotFound = "not-found";
-    public const string Internal = "internal";
-    public const string ValidationError = "validation-error";
-}
-
-public sealed class Result<T>: Result
-{
-    public T Data { get; }
-
-    private Result(T value)
-    {
-        Data = value;
-    }
-
-    public static Result<T> FromValue(T value) => new(value);
-
-    public new static Result<T> FromErrors(ResultErrors errors) => Result.FromErrors(errors) as Result<T>;
-
-    public new static Result<T> NotFound(string errorMessage, string key = DefaultErrorKeys.NotFound) =>
-        Result.NotFound(errorMessage, key) as Result<T>;
-
-    public new static Result<T> Internal(string errorMessage, string key = DefaultErrorKeys.Internal) =>
-        Result.Internal(errorMessage, key) as Result<T>;
-
-    public new static Result<T> NotValid(Dictionary<string, string> errors = default) =>
-        Result.NotValid(errors) as Result<T>;
-    public new static Result<T> NotValid(string errorMessage, string key = DefaultErrorKeys.ValidationError) =>
-        Result.NotValid(errorMessage, key) as Result<T>;
-}
-
 public class Result
 {
     public ResultErrors Errors { get; }
@@ -77,6 +45,12 @@ public class Result
 
     public static Result NotValid(string errorMessage, string key = DefaultErrorKeys.ValidationError) =>
         new(OperationErrorType.Validation, new Dictionary<string, string>
+        {
+            {key, errorMessage}
+        });
+
+    public static Result Forbidden(string errorMessage, string key = DefaultErrorKeys.Forbidden) =>
+        new(OperationErrorType.Forbidden, new Dictionary<string, string>
         {
             {key, errorMessage}
         });
