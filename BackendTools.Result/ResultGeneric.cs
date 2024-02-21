@@ -31,4 +31,7 @@ public sealed class Result<T>: Result
 
     public new static Result<T> NotValid(string errorMessage, string key = DefaultErrorKeys.ValidationError) =>
         FromErrors(Result.NotValid(errorMessage, key).Errors);
+    
+    public new static Result<T> Unauthorized(string errorMessage, string key = DefaultErrorKeys.Unauthorized) =>
+        FromErrors(Result.Unauthorized(errorMessage, key).Errors);
 }
