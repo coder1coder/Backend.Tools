@@ -1,4 +1,4 @@
-﻿namespace BackendTools.Common.Models;
+﻿namespace BackendTools.Result;
 
 public class Result
 {
@@ -51,6 +51,12 @@ public class Result
 
     public static Result Forbidden(string errorMessage, string key = DefaultErrorKeys.Forbidden) =>
         new(OperationErrorType.Forbidden, new Dictionary<string, string>
+        {
+            {key, errorMessage}
+        });
+    
+    public static Result Unauthorized(string errorMessage, string key = DefaultErrorKeys.Unauthorized) =>
+        new(OperationErrorType.Unauthorized, new Dictionary<string, string>
         {
             {key, errorMessage}
         });

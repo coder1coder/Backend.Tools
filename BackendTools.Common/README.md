@@ -45,16 +45,3 @@ public TFilter Filter { get; set; }
 }
 ```
 </details>
-
-<details>
-
-<summary>Result</summary>
-
-```c#
-return Result<bool>.Success(true);
-
-return Result<bool>.NotFound("User not found");
-
-return Result<UserResponse>.NotValid("Validation error message");
-```
-</details>

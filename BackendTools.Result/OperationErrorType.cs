@@ -1,12 +1,12 @@
-﻿namespace BackendTools.Common.Models;
+﻿namespace BackendTools.Result;
 
 public enum OperationErrorType
 {
-    None = 500,
+    Internal = 500,
     Validation = 400,
     NotFound = 404,
     Forbidden = 403,
-    Internal = 500
+    Unauthorized = 401
 }
 
 public static class OperationErrorTypeExtensions
@@ -18,6 +18,7 @@ public static class OperationErrorTypeExtensions
             OperationErrorType.NotFound => "Ресурс не найден",
             OperationErrorType.Forbidden => "Нет доступа",
             OperationErrorType.Internal => "Внутренняя ошибка",
+            OperationErrorType.Unauthorized => "Ошибка авторизации",
 
             _ => "Не определено"
         };

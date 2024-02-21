@@ -1,4 +1,4 @@
-using BackendTools.Common.Models;
+using BackendTools.Result;
 using Xunit;
 
 namespace BackendTools.Tests;

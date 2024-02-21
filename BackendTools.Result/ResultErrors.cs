@@ -1,4 +1,4 @@
-﻿namespace BackendTools.Common.Models;
+﻿namespace BackendTools.Result;
 
 public class ResultErrors
 {

@@ -12,7 +12,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BackendTools.Common\BackendTools.Common.csproj" />
+      <ProjectReference Include="..\BackendTools.Result\BackendTools.Result.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BackendTools.Result\BackendTools.Result.csproj" />
     </ItemGroup>
 
 </Project>

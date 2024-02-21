@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>10</LangVersion>
+
+        <PackageId>BackendTools.Result</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Mikhail Slipin</Authors>
+        <Company>Mikhail Slipin</Company>
+        <Title>BackendTools.Result</Title>
+        <Description>The library provides the ability to wrap the results in a common interface</Description>
+        <PackageProjectUrl>https://github.com/coder1coder/Backend.Tools</PackageProjectUrl>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="LICENSE" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>
